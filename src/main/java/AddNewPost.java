@@ -5,15 +5,14 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 
 public class AddNewPost {
-
     WebDriver driver;
+    /*
     public static WebElement newPostContentBody(WebDriver driver) {
         WebElement element = driver.findElement(By.id("content"));
         return element;
-    }
-/*
+    }*/
     @FindBy(how=How.ID, using="content")
-    WebElement newPostContentBody; */
+    WebElement newPostContentBody;
     @FindBy(how=How.ID, using="title")
     WebElement newPostTitle;
     @FindBy(how= How.ID, using="publish")
@@ -27,7 +26,8 @@ public class AddNewPost {
     }*/
 
     public void addNewPost(String title, String descContent){
-        this.newPostContentBody(driver).sendKeys(descContent);
+        /*this.newPostContentBody(driver).sendKeys(descContent);*/
+        newPostContentBody.sendKeys(descContent);
         newPostTitle.click();
         newPostTitle.sendKeys(title);
         newPostPublish.click();
